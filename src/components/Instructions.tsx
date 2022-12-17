@@ -13,7 +13,7 @@ const Instructions = () => {
 						Upload a plain text file (.txt) with the following format:
 					</p>
 					<p className='notes'>
-						4x2	<br />
+						5x4	<br />
 						W O R L D<br />
 						C L A O Q<br />
 						R U T C W<br />

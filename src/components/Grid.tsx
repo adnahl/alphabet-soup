@@ -9,7 +9,7 @@ type GridProps = {
 const Grid = ({ grid }: GridProps) => {
 
 	return (
-		<div>
+		<section>
 			<h5>Dimensions: {`${grid[0].length} x ${grid.length}`}</h5>
 			<table>
 				{
@@ -23,7 +23,7 @@ const Grid = ({ grid }: GridProps) => {
 						</tr>
 					)}
 			</table>
-		</div>
+		</section>
 	)
 }
 

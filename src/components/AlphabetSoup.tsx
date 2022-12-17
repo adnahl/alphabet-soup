@@ -61,7 +61,7 @@ const AlphabetSoup = () => {
 					</>
 					:
 					<>
-						<UploadFile matrix={matrix} setMatrix={setMatrix} />
+						<UploadFile setMatrix={setMatrix} />
 						<Instructions />
 					</>
 			}

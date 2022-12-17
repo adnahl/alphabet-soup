@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import '../styles/components/UploadFile.css'
 
 type MatrixProps = {
-	matrix: string[][]
 	setMatrix: (matrix: string[][]) => void
 }
 
-const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
+const UploadFile = ({ setMatrix }: MatrixProps) => {
 	const [errorMsg, setErrorMsg] = useState<string>('')
 
 	const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,9 +21,11 @@ const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
 		try {
 			let reader = new FileReader()
 			reader.onload = () => {
-				const result = reader.result
-				result && typeof result === 'string'
-					&& setMatrix(result.split('\n').map(line => line.split(',')))
+				const result = reader.result as string
+				result
+					&& setMatrix(
+						result.toLowerCase().split('\n').map(line => line.split(','))
+					)
 			}
 			reader.readAsText(file as File)
 			setErrorMsg('')
@@ -36,7 +37,7 @@ const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
 	}
 
 	return (
-		<div>
+		<section>
 			{errorMsg && <h5 className='error'>{errorMsg}</h5>}
 			<form className='form-upload-file'>
 				<div className='wrapper-input-file'>
@@ -50,7 +51,7 @@ const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
 					/>
 				</div>
 			</form>
-		</div>
+		</section>
 	)
 }
 
