@@ -68,8 +68,14 @@ button:disabled {
   color: #ddd;
 }
 
+ul,
+ol {
+  padding: 0;
+}
+
 li {
   list-style: none;
+  line-height: 1.25em;
 }
 
 .error {
