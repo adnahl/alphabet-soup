@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: #e91437;
+  --white: #eee;
+  --black: #222;
+  --radius: 6px;
+
+  font-family: 'Unbounded', cursive;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--white);
+  background-color: var(--primary-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--black);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+}
+
+button {
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 1em;
+  cursor: pointer;
+  font-size: .9em;
+  text-transform: uppercase;
+  transition: all ease-in 200ms;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:disabled {
+  background-color: #aaa;
+  color: #ddd;
+}
+
+li {
+  list-style: none;
+}
+
+.error {
+  font-family: 'Inconsolata', monospace;
+  font-size: .9em;
+  color: pink;
+  background-color: red;
+  padding: 0 1em;
+  border: 1px solid pink;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: var(--black);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: .85em;
+}
+
+td {
+  padding: 1em 1.5em;
+  border: 1px solid var(--primary-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: var(--white);
+    color: var(--primary-color);
+  }
+
+  td {
+    border: 1px solid var(--white);
+  }
+}
