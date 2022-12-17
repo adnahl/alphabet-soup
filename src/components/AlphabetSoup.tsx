@@ -33,10 +33,9 @@ const AlphabetSoup = () => {
 			<h2>Alphabet Soup</h2>
 			{
 				matrix.length > 0
-					? <>
-						<Grid
-							grid={generateGrid(matrix)}
-						/>
+					?
+					<>
+						<Grid grid={generateGrid(matrix)} />
 						<button
 							style={{ backgroundColor: 'transparent' }}
 							onClick={() => setMatrix([])}
