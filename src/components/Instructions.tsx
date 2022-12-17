@@ -13,14 +13,16 @@ const Instructions = () => {
 						Upload a plain text file (.txt) with the following format:
 					</p>
 					<p className='notes'>
-						5x4	<br />
-						W O R L D<br />
-						C L A O Q<br />
-						R U T C W<br />
-						P K P K X<br />
-						world<br />
-						cup<br />
-						lock<br />
+						5x4<br />
+						D E L A Y<br />
+						O R R E P<br />
+						O F A T Z<br />
+						R F F W Z<br />
+						DRAW<br />
+						DOOR<br />
+						TEA<br />
+						DELAY<br />
+						PERRO
 					</p>
 					<p>
 						rows x columns<br />
@@ -29,8 +31,8 @@ const Instructions = () => {
 					</p>
 					<p>
 						Download some examples:<br />
-						<a href='/'>Example 1</a><br />
-						<a href='/'>Example 2</a><br />
+						<a download href='/files/Example1.txt'>Example 1</a><br />
+						<a download href='/files/Example2.txt'>Example 2</a><br />
 					</p>
 				</>
 			}
