@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Grid from './Grid'
+import Instructions from './Instructions'
 import UploadFile from './UploadFile'
 
 const AlphabetSoup = () => {
@@ -29,6 +30,7 @@ const AlphabetSoup = () => {
 
 	return (
 		<>
+			<h2>Alphabet Soup</h2>
 			{
 				matrix.length > 0
 					? <>
@@ -42,7 +44,11 @@ const AlphabetSoup = () => {
 							Reset
 						</button>
 					</>
-					: <UploadFile matrix={matrix} setMatrix={setMatrix} />
+					:
+					<>
+						<UploadFile matrix={matrix} setMatrix={setMatrix} />
+						<Instructions />
+					</>
 			}
 		</>
 	)
