@@ -34,21 +34,11 @@ const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
 			setErrorMsg('Error: check console for more info')
 		}
 	}
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
-		try {
-			let matrixSize = matrix[0][0].split('x')
-			console.log({ N: parseInt(matrixSize[0]), M: parseInt(matrixSize[1]) })
-
-		} catch (error) {
-			console.log(error)
-		}
-	}
 
 	return (
 		<div>
 			{errorMsg && <h5 className='error'>{errorMsg}</h5>}
-			<form onSubmit={handleSubmit} className='form-upload-file'>
+			<form className='form-upload-file'>
 				<div className='wrapper-input-file'>
 					<h4>Upload file</h4>
 					<input
@@ -56,15 +46,9 @@ const UploadFile = ({ matrix, setMatrix }: MatrixProps) => {
 						accept="text/plain"
 						name="cover"
 						onChange={handleFile}
-						required={false}
+						required={true}
 					/>
 				</div>
-				<button
-					type='submit'
-					disabled={matrix.length > 0 ? false : true}
-				>
-					Submit
-				</button>
 			</form>
 		</div>
 	)

@@ -26,15 +26,3 @@
 	-moz-opacity: 0;
 	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0)
 }
-
-.form-upload-file {
-	display: grid;
-	grid-template-columns: 4fr 1fr;
-	gap: .5em;
-}
-
-@media screen and (width < 480px) {
-	.form-upload-file {
-		grid-template-columns: 1fr;
-	}
-}
