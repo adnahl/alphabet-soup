@@ -7,8 +7,8 @@ import UploadFile from './UploadFile'
 
 const getDimensions = (matrix: string[][]) => {
 	const matrixSize = matrix[0][0].split('x')
-	const N: number = parseInt(matrixSize[0]) // rows
-	const M: number = parseInt(matrixSize[1]) // columns
+	const N: number = parseInt(matrixSize[0])
+	const M: number = parseInt(matrixSize[1])
 	return { N, M }
 }
 
@@ -23,7 +23,7 @@ const generateGrid = (matrix: string[][]) => {
 		soup[idx] = []
 		tmp[idx] = Array.from(matrix[i][0])
 		for (let j = 0; j < (N * 2) - 1; j++) {
-			if (tmp[idx][j] !== " ") soup[idx].push(tmp[idx][j])
+			if (tmp[idx][j].match(/[a-z]/i)) soup[idx].push(tmp[idx][j])
 		}
 	}
 
@@ -35,7 +35,7 @@ const getWords = (matrix: string[][]) => {
 	let words: string[] = []
 
 	for (let i = M + 1; i < matrix.length; i++)
-		words.push(matrix[i][0].split(" ").join("").replace("\r", ""))
+		words.push(matrix[i][0].split(" ").join(""))
 
 	return words
 }
@@ -53,7 +53,7 @@ const AlphabetSoup = () => {
 						<Grid grid={generateGrid(matrix)} />
 						<Result grid={generateGrid(matrix)} words={getWords(matrix)} />
 						<button
-							style={{ backgroundColor: 'transparent' }}
+							className='alternative-button'
 							onClick={() => setMatrix([])}
 						>
 							Reset

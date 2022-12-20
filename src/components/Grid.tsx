@@ -12,16 +12,18 @@ const Grid = ({ grid }: GridProps) => {
 		<section>
 			<h5>Dimensions: {`${grid[0].length} x ${grid.length}`}</h5>
 			<table>
-				{
-					grid.map(col =>
-						<tr>
-							{
-								col.map(row =>
-									<td>{row}</td>
-								)
-							}
-						</tr>
-					)}
+				<tbody>
+					{
+						grid.map((col, i) =>
+							<tr key={i}>
+								{
+									col.map((row, j) =>
+										<td key={row + j}>{row}</td>
+									)
+								}
+							</tr>
+						)}
+				</tbody>
 			</table>
 		</section>
 	)

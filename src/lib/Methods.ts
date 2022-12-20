@@ -14,6 +14,7 @@ export const searchRightLeft = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y})`
 
+	console.log({ word, method: 'searchRightLeft' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -34,6 +35,7 @@ export const searchBottomTop = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x}, ${y - word.length + 1})`
 
+	console.log({ word, method: 'searchBottomTop' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -55,6 +57,7 @@ export const searchLeftRight = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y})`
 
+	console.log({ word, method: 'searchLeftRight' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -76,6 +79,7 @@ export const searchTopBottom = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x}, ${y + word.length - 1})`
 
+	console.log({ word, method: 'searchTopBottom' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -98,6 +102,7 @@ export const searchRightTop = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y - word.length + 1})`
 
+	console.log({ word, method: 'searchRightTop' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -121,6 +126,7 @@ export const searchLeftTop = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y - word.length + 1})`
 
+	console.log({ word, method: 'searchLeftTop' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -144,6 +150,7 @@ export const searchRightBottom = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y + word.length - 1})`
 
+	console.log({ word, method: 'searchRightBottom' })
 	return { startPoint, endPoint, res: true }
 }
 
@@ -168,5 +175,6 @@ export const searchLeftBottom = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y + word.length - 1})`
 
+	console.log({ word, method: 'searchLeftBottom' })
 	return { startPoint, endPoint, res: true }
 }

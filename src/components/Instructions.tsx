@@ -25,7 +25,7 @@ const Instructions = () => {
 						PERRO
 					</p>
 					<p>
-						rows x columns<br />
+						columns x rows<br />
 						[Matrix]<br />
 						[Words]<br />
 					</p>

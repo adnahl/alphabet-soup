@@ -19,8 +19,6 @@
 	cursor: pointer;
 	height: 100%;
 	position: absolute;
-	top: 0;
-	right: 0;
 	z-index: 9;
 	opacity: 0;
 	-moz-opacity: 0;

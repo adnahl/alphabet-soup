@@ -35,14 +35,14 @@ const Result = ({ grid, words }: ResultProps) => {
 
 		for (let x = 0; x < N; x++) {
 			for (let y = 0; y < M; y++) {
-				res = searchRightLeft(lowerWord, grid, x, y)
-				if (!res.res) res = searchBottomTop(lowerWord, grid, x, y)
-				if (!res.res) res = searchLeftRight(lowerWord, grid, x, y, N)
-				if (!res.res) res = searchTopBottom(lowerWord, grid, x, y, M)
-				if (!res.res) res = searchRightTop(lowerWord, grid, x, y)
-				if (!res.res) res = searchLeftTop(lowerWord, grid, x, y, N)
-				if (!res.res) res = searchRightBottom(lowerWord, grid, x, y, M)
-				if (!res.res) res = searchLeftBottom(lowerWord, grid, x, y, N, M)
+				if (!res.res && x > 0 && word[0] === grid[y][x]) res = searchRightLeft(lowerWord, grid, x, y)
+				if (!res.res && y > 0 && word[0] === grid[y][x]) res = searchBottomTop(lowerWord, grid, x, y)
+				if (!res.res && x < N && word[0] === grid[y][x]) res = searchLeftRight(lowerWord, grid, x, y, N)
+				if (!res.res && y < M && word[0] === grid[y][x]) res = searchTopBottom(lowerWord, grid, x, y, M)
+				if (!res.res && x > 0 && y > 0 && word[0] === grid[y][x]) res = searchRightTop(lowerWord, grid, x, y)
+				if (!res.res && x < N && y > 0 && word[0] === grid[y][x]) res = searchLeftTop(lowerWord, grid, x, y, N)
+				if (!res.res && x > 0 && y < M && word[0] === grid[y][x]) res = searchRightBottom(lowerWord, grid, x, y, M)
+				if (!res.res && x < N && y < M && word[0] === grid[y][x]) res = searchLeftBottom(lowerWord, grid, x, y, N, M)
 
 				if (res.res) return `${res.startPoint} : ${res.endPoint}`
 			}
@@ -56,8 +56,8 @@ const Result = ({ grid, words }: ResultProps) => {
 				<h2>Result</h2>
 				<ul>
 					{
-						words.map(word =>
-							<li key={word}>
+						words.map((word, i) =>
+							<li key={word + i}>
 								<h5>{word}</h5>
 								<span>
 									{searchWord(word, grid)}

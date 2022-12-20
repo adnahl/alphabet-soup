@@ -24,7 +24,9 @@ const UploadFile = ({ setMatrix }: MatrixProps) => {
 				const result = reader.result as string
 				result
 					&& setMatrix(
-						result.toLowerCase().split('\n').map(line => line.split(','))
+						result.toLowerCase().split('\n').map(line =>
+							line.replace('\r', '').split(',')
+						)
 					)
 			}
 			reader.readAsText(file as File)
