@@ -84,8 +84,8 @@ export const searchTopBottom = (
 }
 
 
-// From right to top
-export const searchRightTop = (
+// From right/bottom to left/top
+export const searchRightBottomLeftTop = (
 	word: string,
 	grid: string[][],
 	x: number,
@@ -102,13 +102,13 @@ export const searchRightTop = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y - word.length + 1})`
 
-	console.log({ word, method: 'searchRightTop' })
+	console.log({ word, method: 'searchRightBottomLeftTop' })
 	return { startPoint, endPoint, res: true }
 }
 
 
-// From left to top
-export const searchLeftTop = (
+// From left/bottom to right/top
+export const searchLeftBottomRightTop = (
 	word: string,
 	grid: string[][],
 	x: number,
@@ -126,13 +126,13 @@ export const searchLeftTop = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y - word.length + 1})`
 
-	console.log({ word, method: 'searchLeftTop' })
+	console.log({ word, method: 'searchLeftBottomRightTop' })
 	return { startPoint, endPoint, res: true }
 }
 
 
-// From right to bottom
-export const searchRightBottom = (
+// From right/top to left/bottom
+export const searchRightTopLeftBottom = (
 	word: string,
 	grid: string[][],
 	x: number,
@@ -150,13 +150,13 @@ export const searchRightBottom = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y + word.length - 1})`
 
-	console.log({ word, method: 'searchRightBottom' })
+	console.log({ word, method: 'searchRightTopLeftBottom' })
 	return { startPoint, endPoint, res: true }
 }
 
 
-// From left to bottom
-export const searchLeftBottom = (
+// From left/top to right/bottom
+export const searchLeftTopRightBottom = (
 	word: string,
 	grid: string[][],
 	x: number,
@@ -175,6 +175,6 @@ export const searchLeftBottom = (
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y + word.length - 1})`
 
-	console.log({ word, method: 'searchLeftBottom' })
+	console.log({ word, method: 'searchLeftTopRightBottom' })
 	return { startPoint, endPoint, res: true }
 }

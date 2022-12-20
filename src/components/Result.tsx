@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { searchBottomTop, searchLeftBottom, searchLeftRight, searchLeftTop, searchRightBottom, searchRightLeft, searchRightTop, searchTopBottom } from '../lib/Methods'
+import { searchBottomTop, searchLeftTopRightBottom, searchLeftRight, searchLeftBottomRightTop, searchRightTopLeftBottom, searchRightLeft, searchRightBottomLeftTop, searchTopBottom } from '../lib/Methods'
 import '../styles/components/Result.css'
 
 type resProps = {
@@ -39,10 +39,10 @@ const Result = ({ grid, words }: ResultProps) => {
 				if (!res.res && y > 0 && word[0] === grid[y][x]) res = searchBottomTop(lowerWord, grid, x, y)
 				if (!res.res && x < N && word[0] === grid[y][x]) res = searchLeftRight(lowerWord, grid, x, y, N)
 				if (!res.res && y < M && word[0] === grid[y][x]) res = searchTopBottom(lowerWord, grid, x, y, M)
-				if (!res.res && x > 0 && y > 0 && word[0] === grid[y][x]) res = searchRightTop(lowerWord, grid, x, y)
-				if (!res.res && x < N && y > 0 && word[0] === grid[y][x]) res = searchLeftTop(lowerWord, grid, x, y, N)
-				if (!res.res && x > 0 && y < M && word[0] === grid[y][x]) res = searchRightBottom(lowerWord, grid, x, y, M)
-				if (!res.res && x < N && y < M && word[0] === grid[y][x]) res = searchLeftBottom(lowerWord, grid, x, y, N, M)
+				if (!res.res && x > 0 && y > 0 && word[0] === grid[y][x]) res = searchRightBottomLeftTop(lowerWord, grid, x, y)
+				if (!res.res && x < N && y > 0 && word[0] === grid[y][x]) res = searchLeftBottomRightTop(lowerWord, grid, x, y, N)
+				if (!res.res && x > 0 && y < M && word[0] === grid[y][x]) res = searchRightTopLeftBottom(lowerWord, grid, x, y, M)
+				if (!res.res && x < N && y < M && word[0] === grid[y][x]) res = searchLeftTopRightBottom(lowerWord, grid, x, y, N, M)
 
 				if (res.res) return `${res.startPoint} : ${res.endPoint}`
 			}
