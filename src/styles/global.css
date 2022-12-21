@@ -73,6 +73,14 @@ button:disabled {
   color: var(--white);
 }
 
+input {
+  padding: .5em;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--black);
+  color: var(--white);
+}
+
 ul,
 ol {
   padding: 0;

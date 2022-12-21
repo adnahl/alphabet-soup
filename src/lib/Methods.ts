@@ -7,9 +7,11 @@ export const searchRightLeft = (
 ) => {
 	let startPoint: string = "", endPoint: string = ""
 
-	for (let i = 1; i < word.length; i++)
+	for (let i = 1; i < word.length; i++) {
+		// console.log(word[i], x, y, grid[y])
 		if (x - i < 0 || word[i] !== grid[y][x - i])
 			return { res: false }
+	}
 
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x - word.length + 1}, ${y})`
@@ -50,10 +52,11 @@ export const searchLeftRight = (
 ) => {
 	let startPoint: string = "", endPoint: string = ""
 
-	for (let i = 1; i < word.length; i++)
+	for (let i = 1; i < word.length; i++) {
+		// console.log(word[i], x, y, grid[y])
 		if (x + i >= N || word[i] !== grid[y][x + i])
 			return { res: false }
-
+	}
 	startPoint = `(${x}, ${y})`
 	endPoint = `(${x + word.length - 1}, ${y})`
 

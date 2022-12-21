@@ -15,6 +15,7 @@ type ResultProps = {
 
 
 const Result = ({ grid, words }: ResultProps) => {
+	const [newWord, setNewWord] = useState<string>('')
 
 	// Search a word
 	const searchWord = (
@@ -53,6 +54,12 @@ const Result = ({ grid, words }: ResultProps) => {
 	return (
 		<section className='result-container'>
 			<>
+				<input
+					placeholder='Search a word...'
+					value={newWord}
+					onChange={(e) => setNewWord(e.currentTarget.value)}
+					maxLength={Math.max(grid[0].length, grid.length)}
+				/>
 				<h2>Result</h2>
 				<ul>
 					{
@@ -65,6 +72,12 @@ const Result = ({ grid, words }: ResultProps) => {
 							</li>
 						)
 					}
+					<li>
+						<h5>{newWord}</h5>
+						<span>
+							{searchWord(newWord, grid)}
+						</span>
+					</li>
 				</ul>
 			</>
 		</section>
