@@ -22,6 +22,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*:focus {
+  outline: none;
+}
+
 a {
   font-weight: 500;
   color: inherit;
@@ -80,6 +84,18 @@ input {
   border: none;
   background-color: var(--black);
   color: var(--white);
+}
+
+.input-grid-letter {
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid var(--black);
+  padding: .25em;
+  margin: .25em;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 ul,

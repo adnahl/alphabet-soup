@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/components/UploadFile.css'
+import '../../styles/components/UploadFile.css'
 
 type MatrixProps = {
 	setMatrix: (matrix: string[][]) => void

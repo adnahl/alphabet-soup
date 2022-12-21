@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../styles/components/Instructions.css'
+import '../../styles/components/Instructions.css'
 
 const Instructions = () => {
 	const [showInstructions, setShowInstructions] = useState<boolean>(false)

@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import Grid from './Grid'
-import Instructions from './Instructions'
-import Result from './Result'
-import UploadFile from './UploadFile'
+import Grid from './ASResource/Grid'
+import Instructions from './ASResource/Instructions'
+import MakeFile from './ASResource/MakeFile'
+import Result from './ASResource/Result'
+import UploadFile from './ASResource/UploadFile'
 
 
 const getDimensions = (matrix: string[][]) => {
@@ -62,6 +63,7 @@ const AlphabetSoup = () => {
 					:
 					<>
 						<UploadFile setMatrix={setMatrix} />
+						<MakeFile />
 						<Instructions />
 					</>
 			}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { searchBottomTop, searchLeftTopRightBottom, searchLeftRight, searchLeftBottomRightTop, searchRightTopLeftBottom, searchRightLeft, searchRightBottomLeftTop, searchTopBottom } from '../lib/Methods'
-import '../styles/components/Result.css'
+import { searchBottomTop, searchLeftTopRightBottom, searchLeftRight, searchLeftBottomRightTop, searchRightTopLeftBottom, searchRightLeft, searchRightBottomLeftTop, searchTopBottom } from '../../lib/Methods'
+import '../../styles/components/Result.css'
 
 type resProps = {
 	startPoint?: string

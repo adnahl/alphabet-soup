@@ -1,4 +1,4 @@
-import '../styles/components/Grid.css'
+import '../../styles/components/Grid.css'
 
 type GridProps = {
 	grid: string[][]
