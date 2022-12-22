@@ -4,7 +4,7 @@ import Instructions from './ASResource/Instructions'
 import MakeFile from './ASResource/MakeFile'
 import Result from './ASResource/Result'
 import UploadFile from './ASResource/UploadFile'
-
+import '../styles/components/AlphabetSoup.css'
 
 const getDimensions = (matrix: string[][]) => {
 	const matrixSize = matrix[0][0].split('x')
@@ -43,10 +43,11 @@ const getWords = (matrix: string[][]) => {
 
 const AlphabetSoup = () => {
 	const [matrix, setMatrix] = useState<string[][]>([])
+	const [nav, setNav] = useState<string>('upload')
 
 	return (
 		<>
-			<h2>Alphabet Soup</h2>
+			<h2 className='title'>Alphabet Soup</h2>
 			{
 				matrix.length > 0
 					?
@@ -62,9 +63,14 @@ const AlphabetSoup = () => {
 					</>
 					:
 					<>
-						<UploadFile setMatrix={setMatrix} />
-						<MakeFile />
-						<Instructions />
+						<nav>
+							<button onClick={() => setNav('upload')}>Upload a file</button>
+							<button onClick={() => setNav('make')}>Make a file</button>
+							<button onClick={() => setNav('help')}>Help</button>
+						</nav>
+						{nav === 'upload' && <UploadFile setMatrix={setMatrix} />}
+						{nav === 'make' && <MakeFile />}
+						{nav === 'help' && <Instructions />}
 					</>
 			}
 		</>

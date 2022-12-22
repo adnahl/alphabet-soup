@@ -55,6 +55,7 @@ const Result = ({ grid, words }: ResultProps) => {
 		<section className='result-container'>
 			<>
 				<input
+					type='search'
 					placeholder='Search a word...'
 					value={newWord}
 					onChange={(e) => setNewWord(e.currentTarget.value)}
